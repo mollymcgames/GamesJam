@@ -14,5 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Castle.unity
     guid: ff80c5253ad4bff4d8bf1cc841d9eea2
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: 13097595f343ea8419fb086ca1246e58
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
