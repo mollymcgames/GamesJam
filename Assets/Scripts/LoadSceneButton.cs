@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class LoadSceneButton : MonoBehaviour
 {
-    public string sceneToLoad = "CastleScene"; // Replace with your scene name
+    public string sceneToLoad = "Castle"; // Replace with your scene name
 
     void Start()
     {
