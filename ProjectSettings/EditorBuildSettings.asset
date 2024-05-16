@@ -6,13 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/CastleOld.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/Castle.unity
+    guid: ff80c5253ad4bff4d8bf1cc841d9eea2
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: c0f94fceeaf9f1940869b9c1432284ce
   - enabled: 1
-    path: Assets/Scenes/Castle.unity
-    guid: ff80c5253ad4bff4d8bf1cc841d9eea2
+    path: Assets/Scenes/WinScreen.unity
+    guid: 13097595f343ea8419fb086ca1246e58
+  - enabled: 1
+    path: Assets/Scenes/CastleOld.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
