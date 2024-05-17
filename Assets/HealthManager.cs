@@ -43,4 +43,18 @@ public class PlayerHealth : MonoBehaviour
             healthDisplay.text = health.ToString();  // Update the health display to just show the number
         }
     }
+
+    public void ReduceHealth(int amount)
+    {
+        health -= amount;
+        if (health <= 0)
+        {
+            Debug.Log("Player has died.");
+            // Handle the player's death (e.g., restart the game, show a death animation, etc.)
+        }
+        else
+        {
+            Debug.Log("Player health is now " + health);
+        }
+    }
 }
