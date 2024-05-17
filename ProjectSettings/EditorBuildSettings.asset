@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/CastleOld.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
+    path: Assets/Scenes/StartMenu.unity
+    guid: 626496ee78c96c04cb3dbfad561b510f
+  - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: c0f94fceeaf9f1940869b9c1432284ce
   - enabled: 1
