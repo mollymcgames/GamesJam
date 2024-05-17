@@ -16346,8 +16346,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13ae65315d05c02419bd2fe831c2da2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 120
+  timeRemaining: 20
   timerText: {fileID: 1923939182}
+  lights:
+  - {fileID: 1748907353}
+  - {fileID: 1120686564}
+  - {fileID: 2098590320}
+  - {fileID: 1424333629}
+  - {fileID: 1387241735}
+  - {fileID: 198760758}
+  - {fileID: 2106240715}
+  - {fileID: 2095854054}
+  - {fileID: 934760701}
+  - {fileID: 3397485}
 --- !u!4 &1288986181
 Transform:
   m_ObjectHideFlags: 0
