@@ -1,11 +1,12 @@
 using UnityEngine;
 using TMPro;
-using System.Collections; // Required for IEnumerator
+using System.Collections;
 
 public class OpenDoor : MonoBehaviour
 {
     public float doorRotation = 90f; // Define the rotation of the door
     public TextMeshProUGUI messageText; // Reference to the TextMeshPro UI text element
+    private bool doorOpened = false; // Track if the door has already been opened
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,19 +14,27 @@ public class OpenDoor : MonoBehaviour
         {
             if (CollectItems.allPiecesCollected) // Check if all pieces have been collected
             {
-                ShowMessage("The door is now open!", 1.0f);
-                Debug.Log("Colliding with the painting");
-                GameObject door = GameObject.FindGameObjectWithTag("door");
-                if (door != null)
+                if (!doorOpened)
                 {
-                    Debug.Log("Door found");
-                    // door.transform.Rotate(0f, doorRotation, 0f);
-                    Destroy(door); // Optionally rotate or destroy the door
+                    ShowMessage("The door is now open!", 1.0f);
+                    Debug.Log("Colliding with the painting");
+                    GameObject door = GameObject.FindGameObjectWithTag("door");
+                    if (door != null)
+                    {
+                        Debug.Log("Door found");
+                        // door.transform.Rotate(0f, doorRotation, 0f);
+                        Destroy(door); // Optionally rotate or destroy the door
+                        doorOpened = true; // Mark the door as opened
+                    }
+                    else
+                    {
+                        Debug.LogError("Door not found");
+                        ShowMessage("Error: Door not found!", 1.0f);
+                    }
                 }
                 else
                 {
-                    Debug.LogError("Door not found");
-                    ShowMessage("Error: Door not found!", 1.0f);
+                    ShowMessage("The door is already open!", 1.0f);
                 }
             }
             else
