@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;  // This is necessary for UI manipulation
-using TMPro;  // Include the TextMeshPro namespace
+using TMPro;
+using UnityEngine.SceneManagement;  // Include the TextMeshPro namespace
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -11,7 +12,6 @@ public class PlayerHealth : MonoBehaviour
     {
         UpdateHealthDisplay();  // Initial update to the health display
         Debug.Log("Health system initialized. Current health: " + health);
-
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour
         if (collision.gameObject.CompareTag("Ghost"))
         {
             Debug.Log("Collided with Ghost. Health will be decremented.");
-            health -= 10;  // Reduce health by 10 when colliding with a ghost
+            health -= 40;  // Reduce health by 10 when colliding with a ghost
             UpdateHealthDisplay();  // Update the UI text
 
             if (health <= 0)
@@ -40,16 +40,23 @@ public class PlayerHealth : MonoBehaviour
     {
         if (healthDisplay != null)  // Check if the healthDisplay is linked
         {
+            Debug.Log("Updating health display to: " + health);
             healthDisplay.text = health.ToString();  // Update the health display to just show the number
+        }
+        else
+        {
+            Debug.LogWarning("Health display is not assigned in the Inspector!");
         }
     }
 
     public void ReduceHealth(int amount)
     {
         health -= amount;
+        UpdateHealthDisplay();  // Ensure UI is updated after reducing health
         if (health <= 0)
         {
             Debug.Log("Player has died.");
+            SceneManager.LoadScene("GameOver");
             // Handle the player's death (e.g., restart the game, show a death animation, etc.)
         }
         else
