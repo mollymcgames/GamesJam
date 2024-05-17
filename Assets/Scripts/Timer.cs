@@ -56,7 +56,7 @@ public class Timer : MonoBehaviour
         {
             if (lights[i] != null) // Ensure the light reference is not null
             {
-                float targetIntensity = Mathf.Lerp(0.2f, initialIntensities[i], timeFraction);
+                float targetIntensity = Mathf.Lerp(0f, initialIntensities[i], timeFraction);
                 lights[i].intensity = targetIntensity;
             }
         }
