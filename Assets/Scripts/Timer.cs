@@ -8,6 +8,7 @@ public class Timer : MonoBehaviour
     public float timeRemaining = 30f; // Set this to any number of seconds you need
     public TextMeshProUGUI timerText; // Reference to the TextMeshPro UI text element
     public Light[] lights; // Array of all light objects to be dimmed
+    public Slider timeSlider;
 
     private float[] initialIntensities; // Array to store the initial intensity of each light
     private float totalDuration; // Total duration the timer is set for
@@ -32,6 +33,7 @@ public class Timer : MonoBehaviour
             timeRemaining -= Time.deltaTime;
             UpdateTimerText(); // Update the text whenever the time changes
             UpdateLightIntensity(); // Update the light intensity
+            UpdateSlider(); // Update the slider based on time
         }
         else
         {
@@ -57,6 +59,14 @@ public class Timer : MonoBehaviour
                 float targetIntensity = Mathf.Lerp(0.2f, initialIntensities[i], timeFraction);
                 lights[i].intensity = targetIntensity;
             }
+        }
+    }
+
+    void UpdateSlider()
+    {
+        if (timeSlider != null)
+        {
+            timeSlider.value = (totalDuration - timeRemaining) / totalDuration * timeSlider.maxValue;
         }
     }
 }

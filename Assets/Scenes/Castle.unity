@@ -16359,6 +16359,7 @@ MonoBehaviour:
   - {fileID: 2095854054}
   - {fileID: 934760701}
   - {fileID: 3397485}
+  timeSlider: {fileID: 995307159}
 --- !u!4 &1288986181
 Transform:
   m_ObjectHideFlags: 0
