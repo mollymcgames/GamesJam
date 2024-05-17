@@ -33,7 +33,7 @@ public class CollectItems : MonoBehaviour
     void UpdateCollectedItemsDisplay()
     {
         if (partsCollectedText != null)
-            partsCollectedText.text = "Parts Collected: " + collectedItems.Count.ToString() + "/10";
+            partsCollectedText.text = collectedItems.Count.ToString() + "/10";
     }
 
     void CompletePuzzle()
